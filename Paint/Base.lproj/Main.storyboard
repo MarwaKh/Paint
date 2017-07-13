@@ -6,6 +6,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,23 +23,118 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="jIW-tF-LwE">
+                                <rect key="frame" x="16" y="28" width="343" height="66.5"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g9v-nQ-yXw">
+                                        <rect key="frame" x="0.0" y="0.0" width="68.5" height="66.5"/>
+                                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" image="icons8-Faire tourner Filled-50"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vu9-Up-BuJ">
+                                        <rect key="frame" x="68.5" y="0.0" width="68.5" height="66.5"/>
+                                        <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" image="icons8-Effacer Filled-50"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mI9-Pl-xAF">
+                                        <rect key="frame" x="137" y="0.0" width="69" height="66.5"/>
+                                        <color key="backgroundColor" red="0.15272948145866394" green="0.90037691593170166" blue="0.96825176477432251" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" image="icons8-Pictures Folder_50"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lUi-jH-Ky5">
+                                        <rect key="frame" x="206" y="0.0" width="68.5" height="66.5"/>
+                                        <color key="backgroundColor" red="0.74117647060000003" green="0.59607843140000005" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" image="icons8-Save_50"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nvq-HQ-QqI">
+                                        <rect key="frame" x="274.5" y="0.0" width="68.5" height="66.5"/>
+                                        <color key="backgroundColor" red="1" green="0.90909912029999995" blue="0.089445279619999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" image="icons8-Settings-50"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y9i-zd-Z2N" customClass="DrawingView" customModule="Paint" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="99.5" width="375" height="529"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="IIa-Dh-wN5">
+                                <rect key="frame" x="0.0" y="633.5" width="375" height="33.5"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V8I-cQ-eDs">
+                                        <rect key="frame" x="0.0" y="0.0" width="34" height="33.5"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LYD-la-fn6">
+                                        <rect key="frame" x="34" y="0.0" width="34" height="33.5"/>
+                                        <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tbl-IV-qjz">
+                                        <rect key="frame" x="68" y="0.0" width="34.5" height="33.5"/>
+                                        <color key="backgroundColor" red="0.50196081400000003" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eQy-R9-8du">
+                                        <rect key="frame" x="102.5" y="0.0" width="34" height="33.5"/>
+                                        <color key="backgroundColor" red="0.25098040700000002" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ioU-2x-h1K">
+                                        <rect key="frame" x="136.5" y="0.0" width="34" height="33.5"/>
+                                        <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nzI-dk-rAB">
+                                        <rect key="frame" x="170.5" y="0.0" width="34" height="33.5"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9L1-1r-vYx">
+                                        <rect key="frame" x="204.5" y="0.0" width="34" height="33.5"/>
+                                        <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b7v-R7-x4H">
+                                        <rect key="frame" x="238.5" y="0.0" width="34" height="33.5"/>
+                                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I2M-VR-Fez">
+                                        <rect key="frame" x="272.5" y="0.0" width="34.5" height="33.5"/>
+                                        <color key="backgroundColor" red="0.50196081400000003" green="0.25098040700000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rh8-wg-Nrk">
+                                        <rect key="frame" x="307" y="0.0" width="34" height="33.5"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7x3-uK-ct9">
+                                        <rect key="frame" x="341" y="0.0" width="34" height="33.5"/>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Y9i-zd-Z2N" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="3E2-Mt-seA"/>
-                            <constraint firstAttribute="trailing" secondItem="Y9i-zd-Z2N" secondAttribute="trailing" id="4XR-cH-Fi8"/>
-                            <constraint firstItem="Y9i-zd-Z2N" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Ooj-Gx-Y4e"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Y9i-zd-Z2N" secondAttribute="bottom" id="jSH-lL-6e2"/>
+                            <constraint firstItem="IIa-Dh-wN5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8aQ-Cx-Q5s"/>
+                            <constraint firstItem="jIW-tF-LwE" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.1" id="9wP-T1-NX6"/>
+                            <constraint firstItem="jIW-tF-LwE" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="FbJ-SD-FZp"/>
+                            <constraint firstItem="IIa-Dh-wN5" firstAttribute="top" secondItem="Y9i-zd-Z2N" secondAttribute="bottom" constant="5" id="H1z-lq-GDJ"/>
+                            <constraint firstItem="IIa-Dh-wN5" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.05" id="Osx-Rz-gN1"/>
+                            <constraint firstItem="IIa-Dh-wN5" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="amn-Vr-BTe"/>
+                            <constraint firstItem="Y9i-zd-Z2N" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="itU-jM-ALi"/>
+                            <constraint firstItem="jIW-tF-LwE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="kxr-gW-XQb"/>
+                            <constraint firstItem="Y9i-zd-Z2N" firstAttribute="top" secondItem="jIW-tF-LwE" secondAttribute="bottom" constant="5" id="stH-zl-fGw"/>
+                            <constraint firstItem="jIW-tF-LwE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tc0-UK-ibv"/>
+                            <constraint firstAttribute="trailing" secondItem="Y9i-zd-Z2N" secondAttribute="trailing" id="uK0-4k-E8K"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="jIW-tF-LwE" secondAttribute="trailing" id="wtG-Ck-Vfs"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="IIa-Dh-wN5" secondAttribute="bottom" id="x7e-zv-8vE"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
+            <point key="canvasLocation" x="136.23188405797103" y="138.58695652173915"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icons8-Effacer Filled-50" width="50" height="50"/>
+        <image name="icons8-Faire tourner Filled-50" width="50" height="50"/>
+        <image name="icons8-Pictures Folder_50" width="50" height="50"/>
+        <image name="icons8-Save_50" width="50" height="50"/>
+        <image name="icons8-Settings-50" width="50" height="50"/>
+    </resources>
 </document>
