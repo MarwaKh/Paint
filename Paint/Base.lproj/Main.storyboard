@@ -37,7 +37,10 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vu9-Up-BuJ">
                                         <rect key="frame" x="68.5" y="0.0" width="68.5" height="66.5"/>
                                         <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        <state key="normal" image="icons8-Effacer Filled-50"/>
+                                        <state key="normal" image="eraser"/>
+                                        <connections>
+                                            <action selector="eraseBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZrD-Ga-CYp"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mI9-Pl-xAF">
                                         <rect key="frame" x="137" y="0.0" width="69" height="66.5"/>
@@ -165,6 +168,7 @@
                     </view>
                     <connections>
                         <outlet property="drawingView" destination="Y9i-zd-Z2N" id="61P-mU-igv"/>
+                        <outlet property="eraseButton" destination="Vu9-Up-BuJ" id="eLu-DA-Zws"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -173,7 +177,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="icons8-Effacer Filled-50" width="50" height="50"/>
+        <image name="eraser" width="50" height="50"/>
         <image name="icons8-Faire tourner Filled-50" width="50" height="50"/>
         <image name="icons8-Pictures Folder_50" width="50" height="50"/>
         <image name="icons8-Save_50" width="50" height="50"/>

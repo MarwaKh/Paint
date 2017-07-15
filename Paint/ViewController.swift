@@ -11,6 +11,11 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var drawingView: DrawingView!
+    @IBOutlet weak var eraseButton: UIButton!
+    
+    var isDrawing = true
+    
+    var previousColor: CGColor = UIColor.black.cgColor
     
     let alert = Alert()
     
@@ -21,6 +26,19 @@ class ViewController: UIViewController {
     //Delete all the view content
     @IBAction func resetBtn(_ sender: UIButton) {
         drawingView.resetView()
+    }
+    
+    @IBAction func eraseBtn(_ sender: UIButton) {
+
+        if (isDrawing) {
+            drawingView.colorOfStroke = drawingView.colorChange(r: 255, g: 255, b: 255)
+            eraseButton.setImage(#imageLiteral(resourceName: "brush"), for: .normal)
+        } else {
+            drawingView.colorOfStroke = previousColor
+            eraseButton.setImage(#imageLiteral(resourceName: "eraser"), for: .normal)
+        }
+        
+        isDrawing = !isDrawing
     }
     
     //save the drawing in the photo library of the device
@@ -61,6 +79,9 @@ class ViewController: UIViewController {
         default:
             drawingView.colorOfStroke = drawingView.colorChange(r: 0, g: 0, b: 0)
         }
+        //keep track of the current color of the stroke
+        previousColor = drawingView.colorOfStroke
+        eraseButton.setImage(#imageLiteral(resourceName: "eraser"), for: .normal)
         
     }
     
