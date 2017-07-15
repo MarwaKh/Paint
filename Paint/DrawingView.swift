@@ -12,6 +12,11 @@ class DrawingView: PaintView {
     
     var isDrawing = false
     var lastPoint : CGPoint!
+    
+    var red: CGFloat = 0.0
+    var green: CGFloat = 0.0
+    var blue: CGFloat = 0.0
+    
     var colorOfStroke : CGColor = UIColor.black.cgColor
     var strokes = [Stroke]()
     
@@ -64,4 +69,18 @@ class DrawingView: PaintView {
         
         setNeedsDisplay()
     }
+    
+    
+    func colorChange(r: CGFloat, g: CGFloat, b: CGFloat) -> CGColor {
+        return UIColor(red: r/255, green: g/255, blue: b/255, alpha: 1.0).cgColor
+    }
+    
+    func resetView() {
+        strokes = []
+
+        colorOfStroke = colorChange(r: 0, g: 0, b: 0)
+        
+        setNeedsDisplay()
+    }
+    
 }
