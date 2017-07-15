@@ -48,6 +48,9 @@
                                         <rect key="frame" x="206" y="0.0" width="68.5" height="66.5"/>
                                         <color key="backgroundColor" red="0.74117647060000003" green="0.59607843140000005" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" image="icons8-Save_50"/>
+                                        <connections>
+                                            <action selector="saveBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="byY-aO-tTp"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nvq-HQ-QqI">
                                         <rect key="frame" x="274.5" y="0.0" width="68.5" height="66.5"/>

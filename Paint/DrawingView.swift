@@ -49,6 +49,7 @@ class DrawingView: PaintView {
     }
     
     override func draw(_ rect: CGRect) {
+        
         let context = UIGraphicsGetCurrentContext()
         context?.setLineWidth(8)
         context?.setBlendMode(.normal)
@@ -82,5 +83,7 @@ class DrawingView: PaintView {
         
         setNeedsDisplay()
     }
+    
+    
     
 }

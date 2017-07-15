@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		CE7A4E7E1F10871D00CC9C81 /* PaintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7A4E7D1F10871D00CC9C81 /* PaintView.swift */; };
 		CE7A4E801F10885A00CC9C81 /* DrawingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7A4E7F1F10885A00CC9C81 /* DrawingView.swift */; };
+		CEF1D2931F1A78B600E5ABA5 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1D2921F1A78B600E5ABA5 /* Alert.swift */; };
 		CEF224571EFEE44F000F5B14 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF224561EFEE44F000F5B14 /* AppDelegate.swift */; };
 		CEF224591EFEE44F000F5B14 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF224581EFEE44F000F5B14 /* ViewController.swift */; };
 		CEF2245C1EFEE44F000F5B14 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEF2245A1EFEE44F000F5B14 /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 /* Begin PBXFileReference section */
 		CE7A4E7D1F10871D00CC9C81 /* PaintView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaintView.swift; sourceTree = "<group>"; };
 		CE7A4E7F1F10885A00CC9C81 /* DrawingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawingView.swift; sourceTree = "<group>"; };
+		CEF1D2921F1A78B600E5ABA5 /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		CEF224531EFEE44F000F5B14 /* Paint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Paint.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEF224561EFEE44F000F5B14 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEF224581EFEE44F000F5B14 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 				CEF2245D1EFEE44F000F5B14 /* Assets.xcassets */,
 				CEF2245F1EFEE44F000F5B14 /* LaunchScreen.storyboard */,
 				CEF224621EFEE44F000F5B14 /* Info.plist */,
+				CEF1D2921F1A78B600E5ABA5 /* Alert.swift */,
 			);
 			path = Paint;
 			sourceTree = "<group>";
@@ -146,6 +149,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEF1D2931F1A78B600E5ABA5 /* Alert.swift in Sources */,
 				CEF224591EFEE44F000F5B14 /* ViewController.swift in Sources */,
 				CEF224571EFEE44F000F5B14 /* AppDelegate.swift in Sources */,
 				CEFC8CF21F17C6550054F0C2 /* Stroke.swift in Sources */,

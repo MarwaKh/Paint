@@ -9,17 +9,30 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet weak var drawingView: DrawingView!
-
+    
+    let alert = Alert()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
+    //Delete all the view content
     @IBAction func resetBtn(_ sender: UIButton) {
         drawingView.resetView()
     }
     
+    //save the drawing in the photo library of the device
+    @IBAction func saveBtn(_ sender: UIButton) {
+        
+        if let image = makeImageFromView(view: drawingView) {
+            UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+            alert.showAlert(title: "", message: "Your drawing has been successfully saved.", fromVC: self)
+        }
+    }
+    
+    //everytime a color is clicked, the stroke color is changed to that color
     @IBAction func colorBtn(_ sender: UIButton) {
         
         switch sender.tag {
@@ -46,11 +59,20 @@ class ViewController: UIViewController {
         case 10:
             drawingView.colorOfStroke = drawingView.colorChange(r: 169, g: 169, b: 169)
         default:
-             drawingView.colorOfStroke = drawingView.colorChange(r: 0, g: 0, b: 0)
+            drawingView.colorOfStroke = drawingView.colorChange(r: 0, g: 0, b: 0)
         }
         
     }
     
+    //convert a view into an image
+    func makeImageFromView(view:UIView) -> UIImage? {
+        
+        UIGraphicsBeginImageContextWithOptions(view.bounds.size, view.isOpaque, 0.0)
+        view.layer.render(in: UIGraphicsGetCurrentContext()!)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return image
+    }
     
 }
 
