@@ -19,12 +19,19 @@ class DrawingView: PaintView {
     
     var colorOfStroke : CGColor = UIColor.black.cgColor
     var strokes = [Stroke]()
+    var strokeDict = [Int:Array<Stroke>]()
+    var i = 0
+    var positions = [Int]()
+    
+    
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard !isDrawing else {return}
         isDrawing = true
         guard let touch = touches.first else {return}
         let currentPoint = touch.location(in: self)
+        positions.append(strokes.count)
+
         lastPoint = currentPoint
     }
     
@@ -34,7 +41,7 @@ class DrawingView: PaintView {
         guard let touch = touches.first else {return}
         let currentPoint = touch.location(in: self)
         saveStroke(startPoint: lastPoint, endPoint: currentPoint, color: colorOfStroke)
-
+        
         lastPoint = currentPoint
     }
     
@@ -44,8 +51,9 @@ class DrawingView: PaintView {
         guard let touch = touches.first else {return}
         let currentPoint = touch.location(in: self)
         saveStroke(startPoint: lastPoint, endPoint: currentPoint, color: colorOfStroke)
-
+        
         lastPoint = nil
+        
     }
     
     override func draw(_ rect: CGRect) {
@@ -78,12 +86,21 @@ class DrawingView: PaintView {
     
     func resetView() {
         strokes = []
-
+        
         colorOfStroke = colorChange(r: 0, g: 0, b: 0)
         
         setNeedsDisplay()
     }
     
+    
+    func undo() {
+        for _:Int in positions.last!..<(strokes.count) {
+            strokes.removeLast()
+        }
+        
+        positions.removeLast()
+        setNeedsDisplay()
+    }
     
     
 }

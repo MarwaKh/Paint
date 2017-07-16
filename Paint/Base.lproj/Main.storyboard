@@ -27,28 +27,36 @@
                                 <rect key="frame" x="16" y="28" width="343" height="66.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g9v-nQ-yXw">
-                                        <rect key="frame" x="0.0" y="0.0" width="68.5" height="66.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="57" height="66.5"/>
                                         <color key="backgroundColor" red="0.93161052465438843" green="0.16283401846885681" blue="0.61725378036499023" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" image="icons8-Faire tourner Filled-50"/>
                                         <connections>
                                             <action selector="resetBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="B8V-9Z-BYX"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8sc-jN-55f">
+                                        <rect key="frame" x="57" y="0.0" width="57.5" height="66.5"/>
+                                        <color key="backgroundColor" red="0.25098040700000002" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" image="back"/>
+                                        <connections>
+                                            <action selector="undoBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pwL-2u-hW9"/>
+                                        </connections>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vu9-Up-BuJ">
-                                        <rect key="frame" x="68.5" y="0.0" width="68.5" height="66.5"/>
-                                        <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <rect key="frame" x="114.5" y="0.0" width="57" height="66.5"/>
+                                        <color key="backgroundColor" red="1" green="0.7120069425273603" blue="0.58975178060669142" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" image="eraser"/>
                                         <connections>
                                             <action selector="eraseBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZrD-Ga-CYp"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mI9-Pl-xAF">
-                                        <rect key="frame" x="137" y="0.0" width="69" height="66.5"/>
+                                        <rect key="frame" x="171.5" y="0.0" width="57" height="66.5"/>
                                         <color key="backgroundColor" red="0.15272948145866394" green="0.90037691593170166" blue="0.96825176477432251" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" image="icons8-Pictures Folder_50"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lUi-jH-Ky5">
-                                        <rect key="frame" x="206" y="0.0" width="68.5" height="66.5"/>
+                                        <rect key="frame" x="228.5" y="0.0" width="57.5" height="66.5"/>
                                         <color key="backgroundColor" red="0.74117647060000003" green="0.59607843140000005" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" image="icons8-Save_50"/>
                                         <connections>
@@ -56,7 +64,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nvq-HQ-QqI">
-                                        <rect key="frame" x="274.5" y="0.0" width="68.5" height="66.5"/>
+                                        <rect key="frame" x="286" y="0.0" width="57" height="66.5"/>
                                         <color key="backgroundColor" red="1" green="0.90909912029999995" blue="0.089445279619999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" image="icons8-Settings-50"/>
                                     </button>
@@ -177,6 +185,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="back" width="50" height="50"/>
         <image name="eraser" width="50" height="50"/>
         <image name="icons8-Faire tourner Filled-50" width="50" height="50"/>
         <image name="icons8-Pictures Folder_50" width="50" height="50"/>

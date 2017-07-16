@@ -28,8 +28,16 @@ class ViewController: UIViewController {
         drawingView.resetView()
     }
     
+    //Undo the last drawing action done
+    @IBAction func undoBtn(_ sender: UIButton) {
+        if(drawingView.positions.count != 0) {
+        drawingView.undo()
+        }
+    }
+    
+    //Erase
     @IBAction func eraseBtn(_ sender: UIButton) {
-
+        
         if (isDrawing) {
             drawingView.colorOfStroke = drawingView.colorChange(r: 255, g: 255, b: 255)
             eraseButton.setImage(#imageLiteral(resourceName: "brush"), for: .normal)
@@ -81,6 +89,7 @@ class ViewController: UIViewController {
         }
         //keep track of the current color of the stroke
         previousColor = drawingView.colorOfStroke
+        isDrawing = true
         eraseButton.setImage(#imageLiteral(resourceName: "eraser"), for: .normal)
         
     }
