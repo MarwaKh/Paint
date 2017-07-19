@@ -17,6 +17,8 @@ class ViewController: UIViewController {
     
     var previousColor: CGColor = UIColor.black.cgColor
     
+//    var imagePicked: UIImage!
+    
     let alert = Alert()
     
     override func viewDidLoad() {
@@ -26,6 +28,8 @@ class ViewController: UIViewController {
     //Delete all the view content
     @IBAction func resetBtn(_ sender: UIButton) {
         drawingView.resetView()
+        previousColor = drawingView.colorChange(r: 0, g: 0, b: 0)
+        drawingView.colorOfStroke = previousColor
     }
     
     //Undo the last drawing action done
@@ -49,10 +53,39 @@ class ViewController: UIViewController {
         isDrawing = !isDrawing
     }
     
+    
+    @IBAction func pickImageBtn(_ sender: UIButton) {
+        
+        let actionSheet = UIAlertController(title: "Pick an image", message: "Import an image from:", preferredStyle: .actionSheet)
+        
+        actionSheet.addAction(UIAlertAction(title: "Photo Library", style: .default, handler: { (_) in
+            
+            let imagePicker = UIImagePickerController()
+            imagePicker.sourceType = .photoLibrary
+            imagePicker.allowsEditing = false
+            imagePicker.delegate = self
+            
+            self.present(imagePicker, animated: true, completion: nil)
+        }))
+        
+        actionSheet.addAction(UIAlertAction(title: "Application Pictures", style: .default, handler: { (action) in
+            self.performSegue(withIdentifier: "AppPicturesSegue", sender: self)
+
+        }))
+        
+       
+        
+        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        present(actionSheet, animated: true, completion: nil)
+        
+    }
+
+    
     //save the drawing in the photo library of the device
     @IBAction func saveBtn(_ sender: UIButton) {
         
-        if let image = makeImageFromView(view: drawingView) {
+        if let image = drawingView.makeImageFromView(view: drawingView) {
             UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
             alert.showAlert(title: "", message: "Your drawing has been successfully saved.", fromVC: self)
         }
@@ -94,15 +127,26 @@ class ViewController: UIViewController {
         
     }
     
-    //convert a view into an image
-    func makeImageFromView(view:UIView) -> UIImage? {
-        
-        UIGraphicsBeginImageContextWithOptions(view.bounds.size, view.isOpaque, 0.0)
-        view.layer.render(in: UIGraphicsGetCurrentContext()!)
-        let image = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        return image
-    }
     
 }
+    extension ViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+        
+        func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+            if let selectedImg = info[UIImagePickerControllerOriginalImage] as? UIImage {
+
+                if let imagePicked = drawingView.addImageToView(view: drawingView, imagePicked: selectedImg) {
+                               
+                drawingView.backgroundColor = UIColor(patternImage: imagePicked)
+            }
+            }
+            dismiss(animated: true, completion: nil)
+        }
+        
+        func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+            dismiss(animated: true, completion: nil)
+        }
+
+    }
+    
+
 

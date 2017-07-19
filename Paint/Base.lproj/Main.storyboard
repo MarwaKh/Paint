@@ -54,6 +54,9 @@
                                         <rect key="frame" x="171.5" y="0.0" width="57" height="66.5"/>
                                         <color key="backgroundColor" red="0.15272948145866394" green="0.90037691593170166" blue="0.96825176477432251" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" image="icons8-Pictures Folder_50"/>
+                                        <connections>
+                                            <action selector="pickImageBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hXU-u5-OgE"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lUi-jH-Ky5">
                                         <rect key="frame" x="228.5" y="0.0" width="57.5" height="66.5"/>
@@ -177,11 +180,30 @@
                     <connections>
                         <outlet property="drawingView" destination="Y9i-zd-Z2N" id="61P-mU-igv"/>
                         <outlet property="eraseButton" destination="Vu9-Up-BuJ" id="eLu-DA-Zws"/>
+                        <segue destination="th3-KK-pRY" kind="show" identifier="AppPicturesSegue" id="UXI-KZ-8wl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="136.23188405797103" y="138.58695652173915"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="QtN-uH-h3y">
+            <objects>
+                <viewController id="th3-KK-pRY" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ggT-m7-B4u"/>
+                        <viewControllerLayoutGuide type="bottom" id="8sA-YY-vjk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wlE-VE-Ltp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uSI-IC-tud" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="870" y="134"/>
         </scene>
     </scenes>
     <resources>

@@ -87,7 +87,7 @@ class DrawingView: PaintView {
     func resetView() {
         strokes = []
         
-        colorOfStroke = colorChange(r: 0, g: 0, b: 0)
+//        colorOfStroke = colorChange(r: 0, g: 0, b: 0)
         
         setNeedsDisplay()
     }
@@ -102,5 +102,28 @@ class DrawingView: PaintView {
         setNeedsDisplay()
     }
     
+    //convert a view into an image
+    func makeImageFromView(view:UIView) -> UIImage? {
+        
+        UIGraphicsBeginImageContextWithOptions(view.bounds.size, view.isOpaque, 0.0)
+        view.layer.render(in: UIGraphicsGetCurrentContext()!)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return image
+        
+    }
     
+    //add an image to the view
+    func addImageToView(view:UIView, imagePicked: UIImage) -> UIImage? {
+        resetView()
+        
+        UIGraphicsBeginImageContextWithOptions(view.bounds.size, view.isOpaque, 0.0)
+    
+        imagePicked.draw(in: view.bounds)
+        
+        let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        
+        UIGraphicsEndImageContext()
+        return image
+    }
 }

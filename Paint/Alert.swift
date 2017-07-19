@@ -19,4 +19,5 @@ class Alert {
       
         fromVC.present(alert, animated: true, completion: nil)
     }
+
 }
