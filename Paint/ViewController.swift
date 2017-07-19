@@ -68,7 +68,7 @@ class ViewController: UIViewController {
             self.present(imagePicker, animated: true, completion: nil)
         }))
         
-        actionSheet.addAction(UIAlertAction(title: "Application Pictures", style: .default, handler: { (action) in
+        actionSheet.addAction(UIAlertAction(title: "Application Pictures", style: .default, handler: { [unowned self] (action) in
             self.performSegue(withIdentifier: "AppPicturesSegue", sender: self)
 
         }))
