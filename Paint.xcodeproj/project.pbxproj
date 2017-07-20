@@ -15,6 +15,10 @@
 		CEF2245C1EFEE44F000F5B14 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEF2245A1EFEE44F000F5B14 /* Main.storyboard */; };
 		CEF2245E1EFEE44F000F5B14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEF2245D1EFEE44F000F5B14 /* Assets.xcassets */; };
 		CEF224611EFEE44F000F5B14 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEF2245F1EFEE44F000F5B14 /* LaunchScreen.storyboard */; };
+		CEFAD6E31F200E4400685194 /* Pictures.json in Resources */ = {isa = PBXBuildFile; fileRef = CEFAD6E21F200E4400685194 /* Pictures.json */; };
+		CEFAD6E61F2010AC00685194 /* AppPicturesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFAD6E51F2010AC00685194 /* AppPicturesVC.swift */; };
+		CEFAD6E81F20126200685194 /* Picture.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFAD6E71F20126200685194 /* Picture.swift */; };
+		CEFAD6EA1F20189200685194 /* PictureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFAD6E91F20189200685194 /* PictureCell.swift */; };
 		CEFC8CF21F17C6550054F0C2 /* Stroke.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFC8CF11F17C6550054F0C2 /* Stroke.swift */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +33,10 @@
 		CEF2245D1EFEE44F000F5B14 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CEF224601EFEE44F000F5B14 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CEF224621EFEE44F000F5B14 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CEFAD6E21F200E4400685194 /* Pictures.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Pictures.json; sourceTree = "<group>"; };
+		CEFAD6E51F2010AC00685194 /* AppPicturesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppPicturesVC.swift; sourceTree = "<group>"; };
+		CEFAD6E71F20126200685194 /* Picture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Picture.swift; sourceTree = "<group>"; };
+		CEFAD6E91F20189200685194 /* PictureCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureCell.swift; sourceTree = "<group>"; };
 		CEFC8CF11F17C6550054F0C2 /* Stroke.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stroke.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -62,9 +70,13 @@
 		CEF224551EFEE44F000F5B14 /* Paint */ = {
 			isa = PBXGroup;
 			children = (
+				CEFAD6E71F20126200685194 /* Picture.swift */,
 				CEF224561EFEE44F000F5B14 /* AppDelegate.swift */,
 				CEF224581EFEE44F000F5B14 /* ViewController.swift */,
 				CEF2245A1EFEE44F000F5B14 /* Main.storyboard */,
+				CEFAD6E91F20189200685194 /* PictureCell.swift */,
+				CEFAD6E51F2010AC00685194 /* AppPicturesVC.swift */,
+				CEFAD6E41F200E5400685194 /* Ressources */,
 				CE7A4E7D1F10871D00CC9C81 /* PaintView.swift */,
 				CE7A4E7F1F10885A00CC9C81 /* DrawingView.swift */,
 				CEFC8CF11F17C6550054F0C2 /* Stroke.swift */,
@@ -74,6 +86,14 @@
 				CEF1D2921F1A78B600E5ABA5 /* Alert.swift */,
 			);
 			path = Paint;
+			sourceTree = "<group>";
+		};
+		CEFAD6E41F200E5400685194 /* Ressources */ = {
+			isa = PBXGroup;
+			children = (
+				CEFAD6E21F200E4400685194 /* Pictures.json */,
+			);
+			name = Ressources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,6 +156,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEFAD6E31F200E4400685194 /* Pictures.json in Resources */,
 				CEF224611EFEE44F000F5B14 /* LaunchScreen.storyboard in Resources */,
 				CEF2245E1EFEE44F000F5B14 /* Assets.xcassets in Resources */,
 				CEF2245C1EFEE44F000F5B14 /* Main.storyboard in Resources */,
@@ -151,7 +172,10 @@
 			files = (
 				CEF1D2931F1A78B600E5ABA5 /* Alert.swift in Sources */,
 				CEF224591EFEE44F000F5B14 /* ViewController.swift in Sources */,
+				CEFAD6E61F2010AC00685194 /* AppPicturesVC.swift in Sources */,
 				CEF224571EFEE44F000F5B14 /* AppDelegate.swift in Sources */,
+				CEFAD6E81F20126200685194 /* Picture.swift in Sources */,
+				CEFAD6EA1F20189200685194 /* PictureCell.swift in Sources */,
 				CEFC8CF21F17C6550054F0C2 /* Stroke.swift in Sources */,
 				CE7A4E7E1F10871D00CC9C81 /* PaintView.swift in Sources */,
 				CE7A4E801F10885A00CC9C81 /* DrawingView.swift in Sources */,
