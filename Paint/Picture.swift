@@ -29,7 +29,7 @@ class Picture {
             let picDicts = jsonDict["pictures"] as! [[String : AnyObject]]
             for picDict in picDicts {
                 let picture = Picture(picDict: picDict)
-                print(picture.encodeB64)
+                
                 pictures.append(picture)
             }
         }
