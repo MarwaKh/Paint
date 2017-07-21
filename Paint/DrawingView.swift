@@ -114,16 +114,30 @@ class DrawingView: PaintView {
     }
     
     //add an image to the view
-    func addImageToView(view:UIView, imagePicked: UIImage) -> UIImage? {
+//    func addImageToView(view:UIView, imagePicked: UIImage) -> UIImage? {
+//        resetView()
+//        
+//        UIGraphicsBeginImageContext(view.bounds.size)
+//    
+//        imagePicked.draw(in: view.bounds)
+//        
+//        let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+//        
+//        UIGraphicsEndImageContext()
+//        return image
+//    }
+    
+    func addImageToView(view:UIView, imagePicked: UIImage) {
         resetView()
         
-        UIGraphicsBeginImageContextWithOptions(view.bounds.size, view.isOpaque, 0.0)
-    
+        UIGraphicsBeginImageContext(view.bounds.size)
+        
         imagePicked.draw(in: view.bounds)
         
         let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         
         UIGraphicsEndImageContext()
-        return image
+       
+        view.backgroundColor = UIColor(patternImage: image)
     }
 }

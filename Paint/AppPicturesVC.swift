@@ -24,7 +24,16 @@ class AppPicturesVC: UIViewController {
         pictures = Picture.importPictures()
     }
 
-  
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "MainVCSegue" {
+            if let destination = segue.destination as? ViewController {
+                if let pictureDestination = sender as? Picture {
+                    destination.pictureSelected = pictureDestination
+                    destination.selection = true
+                }
+            }
+        }
+    }
 
     /*
     // MARK: - Navigation
@@ -52,5 +61,10 @@ extension AppPicturesVC: UICollectionViewDelegate, UICollectionViewDataSource {
         
         cell.picture = pictures[indexPath.item]
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let pictureSelected = pictures[indexPath.item]
+        performSegue(withIdentifier: "MainVCSegue", sender: pictureSelected)
     }
 }
