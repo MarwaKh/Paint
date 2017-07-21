@@ -46,7 +46,8 @@ class AppPicturesVC: UIViewController {
     */
 
 }
-extension AppPicturesVC: UICollectionViewDelegate, UICollectionViewDataSource {
+extension AppPicturesVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
@@ -66,5 +67,12 @@ extension AppPicturesVC: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let pictureSelected = pictures[indexPath.item]
         performSegue(withIdentifier: "MainVCSegue", sender: pictureSelected)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = picturesCollectionView.bounds.width*0.45
+        let height = picturesCollectionView.bounds.height*0.4
+        
+        return CGSize(width: width, height: height)
     }
 }
