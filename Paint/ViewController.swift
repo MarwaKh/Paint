@@ -21,6 +21,7 @@ class ViewController: UIViewController {
     
     //    var imagePicked: UIImage!
     
+    
     let alert = Alert()
     
     var pictureSelected: Picture!
@@ -152,9 +153,20 @@ class ViewController: UIViewController {
         
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "SettingsVCSegue" {
+            if let destination = segue.destination as? SettingsVC {
+                destination.delegate = self
+                destination.red = drawingView.red
+                destination.blue = drawingView.blue
+                destination.green = drawingView.green
+            }
+        }
+    }
     
 }
-extension ViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+
+extension ViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate, SettingsVCDelegate {
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let selectedImg = info[UIImagePickerControllerOriginalImage] as? UIImage {
@@ -169,7 +181,10 @@ extension ViewController: UINavigationControllerDelegate, UIImagePickerControlle
         dismiss(animated: true, completion: nil)
     }
     
+    func settingsVCDidFinish(_ settingsVC: SettingsVC) {
+    
+        drawingView.colorOfStroke = drawingView.colorChange(r: settingsVC.red*255, g: settingsVC.green*255, b: settingsVC.blue*255)
 }
 
-
+}
 

@@ -81,6 +81,9 @@ class DrawingView: PaintView {
     
     
     func colorChange(r: CGFloat, g: CGFloat, b: CGFloat) -> CGColor {
+        red = r/255
+        green = g/255
+        blue = b/255
         return UIColor(red: r/255, green: g/255, blue: b/255, alpha: 1.0).cgColor
     }
     
@@ -113,19 +116,6 @@ class DrawingView: PaintView {
         
     }
     
-    //add an image to the view
-//    func addImageToView(view:UIView, imagePicked: UIImage) -> UIImage? {
-//        resetView()
-//        
-//        UIGraphicsBeginImageContext(view.bounds.size)
-//    
-//        imagePicked.draw(in: view.bounds)
-//        
-//        let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
-//        
-//        UIGraphicsEndImageContext()
-//        return image
-//    }
     
     func addImageToView(view:UIView, imagePicked: UIImage) {
         resetView()
