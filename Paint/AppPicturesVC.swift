@@ -35,15 +35,11 @@ class AppPicturesVC: UIViewController {
         }
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func dismissBtn(_ sender: UIBarButtonItem) {
+        
+        dismiss(animated: true, completion: nil)
     }
-    */
+  
 
 }
 extension AppPicturesVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -70,7 +66,7 @@ extension AppPicturesVC: UICollectionViewDelegate, UICollectionViewDataSource, U
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = picturesCollectionView.bounds.width*0.45
+        let width = picturesCollectionView.bounds.width*0.48
         let height = picturesCollectionView.bounds.height*0.4
         
         return CGSize(width: width, height: height)
