@@ -61,7 +61,7 @@ class ViewController: UIViewController {
     
     //Undo the last drawing action done
     @IBAction func undoBtn(_ sender: UIButton) {
-        if(drawingView.positions.count != 0) {
+        if(drawingView.positions.count > 0) {
             drawingView.undo()
         }
     }
@@ -160,6 +160,7 @@ class ViewController: UIViewController {
                 destination.red = drawingView.red
                 destination.blue = drawingView.blue
                 destination.green = drawingView.green
+                destination.brushSize = drawingView.sizeOfBrush
             }
         }
     }
@@ -184,6 +185,12 @@ extension ViewController: UINavigationControllerDelegate, UIImagePickerControlle
     func settingsVCDidFinish(_ settingsVC: SettingsVC) {
     
         drawingView.colorOfStroke = drawingView.colorChange(r: settingsVC.red*255, g: settingsVC.green*255, b: settingsVC.blue*255)
+        drawingView.sizeOfBrush = settingsVC.brushSize
+        
+        //if the settings are saved, display the eraser icon in the menu and get the last drawing color
+        previousColor = drawingView.colorOfStroke
+        isDrawing = true
+        eraseButton.setImage(#imageLiteral(resourceName: "eraser"), for: .normal)
 }
 
 }

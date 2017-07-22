@@ -16,6 +16,7 @@ class DrawingView: PaintView {
     var red: CGFloat = 0.0
     var green: CGFloat = 0.0
     var blue: CGFloat = 0.0
+    var sizeOfBrush: CGFloat = 7.0
     
     var colorOfStroke : CGColor = UIColor.black.cgColor
     var strokes = [Stroke]()
@@ -40,7 +41,7 @@ class DrawingView: PaintView {
         isDrawing = true
         guard let touch = touches.first else {return}
         let currentPoint = touch.location(in: self)
-        saveStroke(startPoint: lastPoint, endPoint: currentPoint, color: colorOfStroke)
+        saveStroke(startPoint: lastPoint, endPoint: currentPoint, color: colorOfStroke, size: sizeOfBrush)
         
         lastPoint = currentPoint
     }
@@ -50,7 +51,7 @@ class DrawingView: PaintView {
         isDrawing = false
         guard let touch = touches.first else {return}
         let currentPoint = touch.location(in: self)
-        saveStroke(startPoint: lastPoint, endPoint: currentPoint, color: colorOfStroke)
+        saveStroke(startPoint: lastPoint, endPoint: currentPoint, color: colorOfStroke, size: sizeOfBrush)
         
         lastPoint = nil
         
@@ -59,7 +60,7 @@ class DrawingView: PaintView {
     override func draw(_ rect: CGRect) {
         
         let context = UIGraphicsGetCurrentContext()
-        context?.setLineWidth(8)
+        
         context?.setBlendMode(.normal)
         context?.setLineCap(.round)
         
@@ -68,12 +69,13 @@ class DrawingView: PaintView {
             context?.move(to: stroke.startPoint)
             context?.addLine(to: stroke.endPoint)
             context?.setStrokeColor(stroke.color)
+            context?.setLineWidth(stroke.size)
             context?.strokePath()
         }
     }
     
-    private func saveStroke(startPoint: CGPoint, endPoint: CGPoint, color: CGColor){
-        let stroke = Stroke(startPoint: startPoint, endPoint: endPoint, color: color)
+    private func saveStroke(startPoint: CGPoint, endPoint: CGPoint, color: CGColor, size: CGFloat){
+        let stroke = Stroke(startPoint: startPoint, endPoint: endPoint, color: color, size: size)
         strokes.append(stroke)
         
         setNeedsDisplay()
@@ -90,19 +92,21 @@ class DrawingView: PaintView {
     func resetView() {
         strokes = []
         
-//        colorOfStroke = colorChange(r: 0, g: 0, b: 0)
-        
         setNeedsDisplay()
     }
     
     
     func undo() {
+        if (strokes.count > positions.last!) {
         for _:Int in positions.last!..<(strokes.count) {
             strokes.removeLast()
         }
         
         positions.removeLast()
         setNeedsDisplay()
+        } else {
+            return
+        }
     }
     
     //convert a view into an image

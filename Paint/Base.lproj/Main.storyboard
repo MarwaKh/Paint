@@ -333,7 +333,7 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Mql-2y-1qe">
+                                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="7" minValue="1" maxValue="70" translatesAutoresizingMaskIntoConstraints="NO" id="Mql-2y-1qe">
                                                                 <rect key="frame" x="108" y="0.0" width="267" height="31"/>
                                                                 <color key="minimumTrackTintColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                 <connections>
@@ -522,6 +522,7 @@
                         <outlet property="redLabel" destination="dYy-k3-uv3" id="pJd-vU-q5a"/>
                         <outlet property="redSlider" destination="VNS-aW-Ua8" id="9KW-KK-hZW"/>
                         <outlet property="settingsImageView" destination="6uE-kP-qMf" id="D5T-Ql-wqU"/>
+                        <outlet property="sizeSlider" destination="Mql-2y-1qe" id="Ffk-0y-Cbz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uW7-1T-jtF" userLabel="First Responder" sceneMemberID="firstResponder"/>

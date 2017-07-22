@@ -26,12 +26,14 @@ class SettingsVC: UIViewController {
     @IBOutlet weak var redSlider: UISlider!
     @IBOutlet weak var greenSlider: UISlider!
     @IBOutlet weak var blueSlider: UISlider!
+    @IBOutlet weak var sizeSlider: UISlider!
     
     var delegate: SettingsVCDelegate?
     
     var red: CGFloat = 0.0
     var green: CGFloat = 0.0
     var blue: CGFloat = 0.0
+    var brushSize: CGFloat = 7.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +48,8 @@ class SettingsVC: UIViewController {
         
         blueSlider.value = Float(blue)
         blueLabel.text = String(Int(blueSlider.value * 255))
+        
+        sizeSlider.value = Float(brushSize)
     }
 
     @IBAction func saveChangesBtn(_ sender: UIBarButtonItem) {
@@ -63,6 +67,7 @@ class SettingsVC: UIViewController {
     }
 
     @IBAction func sizeSlider(_ sender: UISlider) {
+        brushSize = CGFloat(sender.value)
     }
     
     @IBAction func redSlider(_ sender: UISlider) {
