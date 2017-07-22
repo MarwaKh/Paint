@@ -16,6 +16,8 @@ class SettingsVC: UIViewController {
 
     @IBOutlet weak var settingsImageView: UIImageView!
     
+    @IBOutlet weak var sizeImage: UIImageView!
+    
     @IBOutlet weak var brushSizeLabel: UILabel!
     
     @IBOutlet weak var redLabel: UILabel!
@@ -73,6 +75,7 @@ class SettingsVC: UIViewController {
 
     @IBAction func sizeSlider(_ sender: UISlider) {
         brushSize = CGFloat(sender.value)
+        updateImage(r: red, g: green, b: blue, opacity: opacity)
     }
     
     @IBAction func redSlider(_ sender: UISlider) {
@@ -106,6 +109,20 @@ class SettingsVC: UIViewController {
     func updateImage(r:CGFloat, g:CGFloat, b:CGFloat, opacity: CGFloat) {
         
         settingsImageView.backgroundColor = UIColor(red: r, green: g, blue: b, alpha: opacity)
+        
+        UIGraphicsBeginImageContext(sizeImage.frame.size)
+        
+        let context = UIGraphicsGetCurrentContext()
+        
+        context?.setStrokeColor(UIColor(red: r, green: g, blue: b, alpha: opacity).cgColor)
+        context?.setLineWidth(brushSize)
+        context?.setLineCap(.round)
+        context?.move(to: CGPoint(x: sizeImage.bounds.width/2, y: sizeImage.bounds.width/2))
+        context?.addLine(to: CGPoint(x: sizeImage.bounds.width/2, y: sizeImage.bounds.width/2))
+        context?.strokePath()
+        
+        sizeImage.image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
     }
     
    
