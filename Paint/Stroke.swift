@@ -13,4 +13,5 @@ struct Stroke {
     let endPoint : CGPoint
     let color : CGColor
     let size : CGFloat
+    let opacity : CGFloat
 }

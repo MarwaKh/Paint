@@ -368,7 +368,7 @@
                                                                         <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="255" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dYy-k3-uv3">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="255" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dYy-k3-uv3">
                                                                         <rect key="frame" x="65" y="0.0" width="45" height="30"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                                         <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -403,7 +403,7 @@
                                                                         <color key="textColor" red="0.0" green="0.56078431370000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="255" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qbC-jn-Wpl">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="255" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qbC-jn-Wpl">
                                                                         <rect key="frame" x="65.333333333333314" y="0.0" width="44.666666666666671" height="29.999999999999943"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                                         <color key="textColor" red="0.0" green="0.56078431370000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -438,7 +438,7 @@
                                                                         <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="255" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1sK-M7-ML2">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="255" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1sK-M7-ML2">
                                                                         <rect key="frame" x="65" y="0.0" width="45" height="30"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                                         <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -461,15 +461,29 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HJK-gc-tbt">
                                                         <rect key="frame" x="0.0" y="160.33333333333331" width="373" height="30"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Opacity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RuW-hV-jKp">
+                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="yf3-eR-IDR">
                                                                 <rect key="frame" x="0.0" y="0.0" width="110" height="30"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Opacity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YTB-yX-gUm">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="75" height="30"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" constant="75" id="ByB-Iu-EUL"/>
+                                                                        </constraints>
+                                                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="20"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pjr-Ba-E7B">
+                                                                        <rect key="frame" x="75" y="0.0" width="35" height="30"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="width" constant="110" id="rpB-FB-RC2"/>
+                                                                    <constraint firstAttribute="width" constant="110" id="GCQ-qN-O8W"/>
                                                                 </constraints>
-                                                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="20"/>
-                                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
+                                                            </stackView>
                                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="5G7-LL-rnq">
                                                                 <rect key="frame" x="108" y="0.0" width="267" height="31"/>
                                                                 <color key="minimumTrackTintColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -518,7 +532,8 @@
                         <outlet property="brushSizeLabel" destination="auh-2T-hVx" id="4Ge-Es-y0k"/>
                         <outlet property="greenLabel" destination="qbC-jn-Wpl" id="H9m-6v-IYE"/>
                         <outlet property="greenSlider" destination="74e-5v-KOI" id="ws2-SA-o23"/>
-                        <outlet property="opacityLabel" destination="RuW-hV-jKp" id="Spc-WF-EZV"/>
+                        <outlet property="opacityLabel" destination="Pjr-Ba-E7B" id="wmV-KL-2Jl"/>
+                        <outlet property="opacitySlider" destination="5G7-LL-rnq" id="ukQ-0H-AJP"/>
                         <outlet property="redLabel" destination="dYy-k3-uv3" id="pJd-vU-q5a"/>
                         <outlet property="redSlider" destination="VNS-aW-Ua8" id="9KW-KK-hZW"/>
                         <outlet property="settingsImageView" destination="6uE-kP-qMf" id="D5T-Ql-wqU"/>

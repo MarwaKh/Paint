@@ -27,6 +27,7 @@ class SettingsVC: UIViewController {
     @IBOutlet weak var greenSlider: UISlider!
     @IBOutlet weak var blueSlider: UISlider!
     @IBOutlet weak var sizeSlider: UISlider!
+    @IBOutlet weak var opacitySlider: UISlider!
     
     var delegate: SettingsVCDelegate?
     
@@ -34,11 +35,12 @@ class SettingsVC: UIViewController {
     var green: CGFloat = 0.0
     var blue: CGFloat = 0.0
     var brushSize: CGFloat = 7.0
+    var opacity: CGFloat = 1.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        updateImage(r: red, g: green, b: blue)
+        updateImage(r: red, g: green, b: blue, opacity: opacity)
         
         redSlider.value = Float(red)
         redLabel.text = String(Int(redSlider.value * 255))
@@ -50,6 +52,9 @@ class SettingsVC: UIViewController {
         blueLabel.text = String(Int(blueSlider.value * 255))
         
         sizeSlider.value = Float(brushSize)
+        
+        opacitySlider.value = Float(opacity)
+        opacityLabel.text = String(format:"%.1f", opacitySlider.value)
     }
 
     @IBAction func saveChangesBtn(_ sender: UIBarButtonItem) {
@@ -73,14 +78,14 @@ class SettingsVC: UIViewController {
     @IBAction func redSlider(_ sender: UISlider) {
         
         red = CGFloat(sender.value)
-        updateImage(r: red, g: green, b: blue)
+        updateImage(r: red, g: green, b: blue, opacity: opacity)
         redLabel.text = "\(Int(sender.value * 255))"
     }
     
     @IBAction func greenSlider(_ sender: UISlider) {
         
         green = CGFloat(sender.value)
-        updateImage(r: red, g: green, b: blue)
+        updateImage(r: red, g: green, b: blue, opacity: opacity)
         greenLabel.text = "\(Int(sender.value * 255))"
     }
   
@@ -88,16 +93,19 @@ class SettingsVC: UIViewController {
     @IBAction func blueSlider(_ sender: UISlider) {
         
         blue = CGFloat(sender.value)
-        updateImage(r: red, g: green, b: blue)
+        updateImage(r: red, g: green, b: blue, opacity: opacity)
         blueLabel.text = "\(Int(sender.value * 255))"
     }
     
     @IBAction func opacitySlider(_ sender: UISlider) {
+        opacity = CGFloat(sender.value)
+        opacityLabel.text = String(format:"%.1f", sender.value)
+        updateImage(r: red, g: green, b: blue, opacity: opacity)
     }
     
-    func updateImage(r:CGFloat, g:CGFloat, b:CGFloat) {
+    func updateImage(r:CGFloat, g:CGFloat, b:CGFloat, opacity: CGFloat) {
         
-        settingsImageView.backgroundColor = UIColor(red: r, green: g, blue: b, alpha: 1.0)
+        settingsImageView.backgroundColor = UIColor(red: r, green: g, blue: b, alpha: opacity)
     }
     
    

@@ -55,7 +55,7 @@ class ViewController: UIViewController {
     //Delete all the view content
     @IBAction func resetBtn(_ sender: UIButton) {
         drawingView.resetView()
-        previousColor = drawingView.colorChange(r: 0, g: 0, b: 0)
+        previousColor = drawingView.colorChange(r: 0, g: 0, b: 0, opacity: 1.0)
         drawingView.colorOfStroke = previousColor
     }
     
@@ -70,7 +70,7 @@ class ViewController: UIViewController {
     @IBAction func eraseBtn(_ sender: UIButton) {
         
         if (isDrawing) {
-            drawingView.colorOfStroke = drawingView.colorChange(r: 255, g: 255, b: 255)
+            drawingView.colorOfStroke = drawingView.colorChange(r: 255, g: 255, b: 255, opacity: drawingView.brushOpacity)
             eraseButton.setImage(#imageLiteral(resourceName: "brush"), for: .normal)
         } else {
             drawingView.colorOfStroke = previousColor
@@ -122,29 +122,29 @@ class ViewController: UIViewController {
         
         switch sender.tag {
         case 0:
-            drawingView.colorOfStroke = drawingView.colorChange(r: 255, g: 255, b: 0)
+            drawingView.colorOfStroke = drawingView.colorChange(r: 255, g: 255, b: 0, opacity: drawingView.brushOpacity)
         case 1:
-            drawingView.colorOfStroke = drawingView.colorChange(r: 255, g: 128, b: 0)
+            drawingView.colorOfStroke = drawingView.colorChange(r: 255, g: 128, b: 0, opacity: drawingView.brushOpacity)
         case 2:
-            drawingView.colorOfStroke = drawingView.colorChange(r: 128, g: 255, b: 0)
+            drawingView.colorOfStroke = drawingView.colorChange(r: 128, g: 255, b: 0, opacity: drawingView.brushOpacity)
         case 3:
-            drawingView.colorOfStroke = drawingView.colorChange(r: 64, g: 128, b: 0)
+            drawingView.colorOfStroke = drawingView.colorChange(r: 64, g: 128, b: 0, opacity: drawingView.brushOpacity)
         case 4:
-            drawingView.colorOfStroke = drawingView.colorChange(r: 0, g: 255, b: 255)
+            drawingView.colorOfStroke = drawingView.colorChange(r: 0, g: 255, b: 255, opacity: drawingView.brushOpacity)
         case 5:
-            drawingView.colorOfStroke = drawingView.colorChange(r: 0, g: 0, b: 255)
+            drawingView.colorOfStroke = drawingView.colorChange(r: 0, g: 0, b: 255, opacity: drawingView.brushOpacity)
         case 6:
-            drawingView.colorOfStroke = drawingView.colorChange(r: 128, g: 0, b: 255)
+            drawingView.colorOfStroke = drawingView.colorChange(r: 128, g: 0, b: 255, opacity: drawingView.brushOpacity)
         case 7:
-            drawingView.colorOfStroke = drawingView.colorChange(r: 255, g: 0, b: 0)
+            drawingView.colorOfStroke = drawingView.colorChange(r: 255, g: 0, b: 0, opacity: drawingView.brushOpacity)
         case 8:
-            drawingView.colorOfStroke = drawingView.colorChange(r: 128, g: 64, b: 0)
+            drawingView.colorOfStroke = drawingView.colorChange(r: 128, g: 64, b: 0, opacity: drawingView.brushOpacity)
         case 9:
-            drawingView.colorOfStroke = drawingView.colorChange(r: 0, g: 0, b: 0)
+            drawingView.colorOfStroke = drawingView.colorChange(r: 0, g: 0, b: 0, opacity: drawingView.brushOpacity)
         case 10:
-            drawingView.colorOfStroke = drawingView.colorChange(r: 169, g: 169, b: 169)
+            drawingView.colorOfStroke = drawingView.colorChange(r: 169, g: 169, b: 169, opacity: drawingView.brushOpacity)
         default:
-            drawingView.colorOfStroke = drawingView.colorChange(r: 0, g: 0, b: 0)
+            drawingView.colorOfStroke = drawingView.colorChange(r: 0, g: 0, b: 0, opacity: drawingView.brushOpacity)
         }
         //keep track of the current color of the stroke
         previousColor = drawingView.colorOfStroke
@@ -161,6 +161,7 @@ class ViewController: UIViewController {
                 destination.blue = drawingView.blue
                 destination.green = drawingView.green
                 destination.brushSize = drawingView.sizeOfBrush
+                destination.opacity = drawingView.brushOpacity
             }
         }
     }
@@ -184,8 +185,9 @@ extension ViewController: UINavigationControllerDelegate, UIImagePickerControlle
     
     func settingsVCDidFinish(_ settingsVC: SettingsVC) {
     
-        drawingView.colorOfStroke = drawingView.colorChange(r: settingsVC.red*255, g: settingsVC.green*255, b: settingsVC.blue*255)
+        drawingView.colorOfStroke = drawingView.colorChange(r: settingsVC.red*255, g: settingsVC.green*255, b: settingsVC.blue*255, opacity: settingsVC.opacity)
         drawingView.sizeOfBrush = settingsVC.brushSize
+        drawingView.brushOpacity = settingsVC.opacity
         
         //if the settings are saved, display the eraser icon in the menu and get the last drawing color
         previousColor = drawingView.colorOfStroke

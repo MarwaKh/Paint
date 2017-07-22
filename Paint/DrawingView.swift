@@ -17,6 +17,7 @@ class DrawingView: PaintView {
     var green: CGFloat = 0.0
     var blue: CGFloat = 0.0
     var sizeOfBrush: CGFloat = 7.0
+    var brushOpacity: CGFloat = 1.0
     
     var colorOfStroke : CGColor = UIColor.black.cgColor
     var strokes = [Stroke]()
@@ -41,7 +42,7 @@ class DrawingView: PaintView {
         isDrawing = true
         guard let touch = touches.first else {return}
         let currentPoint = touch.location(in: self)
-        saveStroke(startPoint: lastPoint, endPoint: currentPoint, color: colorOfStroke, size: sizeOfBrush)
+        saveStroke(startPoint: lastPoint, endPoint: currentPoint, color: colorOfStroke, size: sizeOfBrush, opacity: brushOpacity)
         
         lastPoint = currentPoint
     }
@@ -51,7 +52,7 @@ class DrawingView: PaintView {
         isDrawing = false
         guard let touch = touches.first else {return}
         let currentPoint = touch.location(in: self)
-        saveStroke(startPoint: lastPoint, endPoint: currentPoint, color: colorOfStroke, size: sizeOfBrush)
+        saveStroke(startPoint: lastPoint, endPoint: currentPoint, color: colorOfStroke, size: sizeOfBrush, opacity: brushOpacity)
         
         lastPoint = nil
         
@@ -74,19 +75,19 @@ class DrawingView: PaintView {
         }
     }
     
-    private func saveStroke(startPoint: CGPoint, endPoint: CGPoint, color: CGColor, size: CGFloat){
-        let stroke = Stroke(startPoint: startPoint, endPoint: endPoint, color: color, size: size)
+    private func saveStroke(startPoint: CGPoint, endPoint: CGPoint, color: CGColor, size: CGFloat, opacity: CGFloat){
+        let stroke = Stroke(startPoint: startPoint, endPoint: endPoint, color: color, size: size, opacity: opacity)
         strokes.append(stroke)
         
         setNeedsDisplay()
     }
     
     
-    func colorChange(r: CGFloat, g: CGFloat, b: CGFloat) -> CGColor {
+    func colorChange(r: CGFloat, g: CGFloat, b: CGFloat, opacity: CGFloat) -> CGColor {
         red = r/255
         green = g/255
         blue = b/255
-        return UIColor(red: r/255, green: g/255, blue: b/255, alpha: 1.0).cgColor
+        return UIColor(red: r/255, green: g/255, blue: b/255, alpha: opacity).cgColor
     }
     
     func resetView() {
